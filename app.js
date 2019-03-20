@@ -22,4 +22,4 @@ mongoose.connection.once("connected", ()=>{
 
 app.use("/", require("./controller/router"))
 
-app.listen("3000", ()=>console.log("listening..."))
+app.listen("8080", ()=>console.log("listening..."))
