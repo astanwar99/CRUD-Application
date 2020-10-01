@@ -1,6 +1,8 @@
 const express = require("express");
 const bp = require("body-parser");
 const mongoose = require("mongoose");
+const hostname = 'localhost';
+const port = 8080;
 
 const app = express();
 //
@@ -22,4 +24,6 @@ mongoose.connection.once("connected", ()=>{
 
 app.use("/", require("./controller/router"))
 
-app.listen("8080", ()=>console.log("listening..."))
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
